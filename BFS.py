@@ -23,9 +23,8 @@ def bfs(graph, start, visited):
                 queue.append(i)
                 print(queue, 'queue')
                 visited[i] = True
-            
-            
-
+        
+    
 graph = [
     [],
     [2,3,8],
@@ -40,3 +39,11 @@ graph = [
 
 visited = [False] *9
 bfs(graph, 1, visited)
+
+
+
+def dfs(graph, v, visited):
+    visited[v] = True
+    for i in graph[v]:
+        if not visited[i]:
+            dfs(graph, v, visited)
